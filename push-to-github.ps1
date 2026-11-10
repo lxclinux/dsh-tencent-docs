@@ -1,4 +1,4 @@
-# 把本地 7 个 commit 推到 GitHub：lxclinux/dsh-tencent-docs
+﻿# 把本地 7 个 commit 推到 GitHub：lxclinux/dsh-tencent-docs
 # 用法：仓库建好后在本文件所在目录执行  .\push-to-github.ps1
 $ErrorActionPreference = 'Stop'
 $repo = 'https://github.com/lxclinux/dsh-tencent-docs.git'

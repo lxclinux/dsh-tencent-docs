@@ -1,4 +1,4 @@
-# 一键发布到 npm（只需你在浏览器里授权一次）
+﻿# 一键发布到 npm（只需你在浏览器里授权一次）
 # 本机 TLS 链缺根证书：npm 走 node，需 strict-ssl=false 才能连 registry.npmjs.org
 $ErrorActionPreference = 'Stop'
 $reg = 'https://registry.npmjs.org'
