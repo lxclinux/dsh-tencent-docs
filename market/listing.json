@@ -1,0 +1,23 @@
+{
+  "name": "dsh-tencent-docs",
+  "owner": "liuxc",
+  "url": "https://github.com/liuxc/dsh-tencent-docs",
+  "category": "docs",
+  "description": {
+    "en": "Tencent Docs in the DSH left sidebar: one click opens your real recent files, the folder tree (drill down, breadcrumbs, title search) and a local link list, read live over Tencent Docs' official MCP endpoint. A token pasted once is stored on the host side only (0600), never in the page; files open in a new tab because Tencent Docs forbids third-party embedding.",
+    "zh": "把腾讯文档放进 DSH 左侧栏：点一下就能看真实的最近文件、逐层下钻的目录树（含面包屑与标题搜索）和一个本机链接清单，数据经腾讯文档官方 MCP 端点实时读取。令牌粘贴一次、只由 Host 半落盘（0600），页面脚本读不到；腾讯文档禁止第三方嵌入，文件在新标签打开。"
+  },
+  "npm": "dsh-tencent-docs",
+  "version": "0.3.4",
+  "install": "dsh plugin --profile desktop add dsh-tencent-docs",
+  "icon": "https://raw.githubusercontent.com/liuxc/dsh-tencent-docs/main/market/icon-256.png",
+  "screenshots": [
+    "https://raw.githubusercontent.com/liuxc/dsh-tencent-docs/main/market/shot-recent.png",
+    "https://raw.githubusercontent.com/liuxc/dsh-tencent-docs/main/market/shot-cloud.png",
+    "https://raw.githubusercontent.com/liuxc/dsh-tencent-docs/main/market/shot-local.png"
+  ],
+  "capabilities": ["fs-read", "fs-write", "network"],
+  "capabilityRedLines": [],
+  "engines": { "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1" },
+  "added": "2026-11-10"
+}

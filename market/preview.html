@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>dsh-tencent-docs · panel preview</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1c1d21;
+    --dim: #8a8f99;
+    --line: #e8eaee;
+    --accent: #2f6bff;
+    --chip: #f3f5f9;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); }
+  body {
+    font: 14px/1.5 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    color: var(--fg);
+    display: flex;
+    height: 100vh;
+  }
+  /* ── left rail (示意) ─────────────────────────────── */
+  .rail {
+    width: 52px;
+    border-right: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 0;
+    background: #fbfbfd;
+  }
+  .rail i {
+    width: 34px; height: 34px; border-radius: 9px;
+    background: var(--chip);
+    display: grid; place-items: center;
+    font-style: normal; font-size: 15px; color: var(--dim);
+  }
+  .rail i.on { background: rgba(47,107,255,.12); color: var(--accent); outline: 1.5px solid rgba(47,107,255,.35); }
+  /* ── panel ───────────────────────────────────────── */
+  .panel { flex: 1; min-width: 0; display: flex; flex-direction: column; color: var(--fg); }
+  .head { padding: 24px 28px 12px; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  .head h2 { font-size: 22px; font-weight: 700; margin: 0; letter-spacing: .2px; }
+  .head span { font-size: 13.5px; color: var(--dim); }
+  .tabs { display: flex; gap: 6px; padding: 0 28px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+  .tabs b {
+    padding: 10px 16px; font-size: 15px; font-weight: 500; color: var(--dim);
+    border-bottom: 2.5px solid transparent;
+  }
+  .tabs b.on { color: var(--fg); font-weight: 700; border-bottom-color: var(--accent); }
+  .body { flex: 1; min-height: 0; overflow: hidden; padding: 0 28px 28px; }
+  .bar { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; }
+  .bar input {
+    flex: 1; font-size: 15px; padding: 10px 12px; border-radius: 9px;
+    border: 1px solid var(--line); background: #fff; color: var(--fg);
+  }
+  .bar b { font-size: 13.5px; color: var(--dim); font-weight: 500; }
+  .row {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; border-radius: 11px; border: 1px solid transparent;
+  }
+  .row + .row { margin-top: 2px; }
+  .row:nth-child(odd) { background: #fafbfd; }
+  .ico {
+    width: 34px; height: 34px; border-radius: 8px; flex: none;
+    display: grid; place-items: center; font-size: 16px;
+    background: #eef2ff; color: #2f6bff;
+  }
+  .ico.f { background: #eafaf1; color: #1f9d55; }
+  .meta { min-width: 0; flex: 1; }
+  .meta .t { font-size: 15.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .meta .s { font-size: 13px; color: var(--dim); margin-top: 2px; }
+  .chip { font-size: 12.5px; color: var(--dim); background: var(--chip); border-radius: 999px; padding: 3px 10px; flex: none; }
+  .crumb { font-size: 13.5px; color: var(--dim); margin-bottom: 10px; }
+  .crumb b { color: var(--fg); font-weight: 600; }
+  .foot {
+    padding: 10px 28px 14px; border-top: 1px solid var(--line);
+    font-size: 12.5px; color: var(--dim); display: flex; gap: 8px; align-items: center;
+  }
+  .foot b { font-weight: 600; color: var(--fg); }
+  .empty { color: var(--dim); font-size: 14px; padding: 18px 4px; }
+  .card {
+    border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; max-width: 560px;
+    margin: 6px 0 14px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 16px; }
+  .card p { margin: 0 0 12px; color: var(--dim); font-size: 13.5px; }
+  .card code { background: var(--chip); padding: 1px 6px; border-radius: 5px; font-size: 12.5px; }
+  .btn {
+    display: inline-block; border: 0; border-radius: 9px; background: var(--accent);
+    color: #fff; font-size: 14px; font-weight: 600; padding: 9px 16px;
+  }
+</style>
+</head>
+<body>
+  <div class="rail">
+    <i>◧</i><i>✳</i><i class="on">▤</i><i>◷</i><i>⚙</i>
+  </div>
+
+  <div class="panel" id="panel"></div>
+
+<script>
+  const params = new URLSearchParams(location.search)
+  const tab = params.get('tab') || 'recent'
+
+  const TABS = [
+    ['recent', '最近', '最近打开与编辑'],
+    ['cloud', '云文档', '云文档目录'],
+    ['local', '本机清单', '本机链接清单'],
+  ]
+
+  const RECENT = [
+    ['系统组人员月度考勤及加班、加点统计表', '今天 09:41 · 在线表格', '已置顶'],
+    ['Q4 交付排期与资源盘点', '今天 08:12 · 在线表格', ''],
+    ['接口联调问题清单 v3', '昨天 18:05 · 在线文档', ''],
+    ['创新云平台工作情况', '昨天 15:22 · 在线文档', ''],
+    ['周会纪要 · 第 46 周', '11-06 17:30 · 在线文档', ''],
+    ['成本核算-2026Q3', '11-05 11:02 · 在线表格', ''],
+  ]
+
+  const FOLDERS = [
+    ['创新云平台工作情况', '文件夹 · 12 项', true],
+    ['系统组人员月度考勤及加班、加点统计表', '在线表格 · 今天 09:41', false],
+    ['2026 年度预算（汇总）', '在线表格 · 11-04', false],
+    ['接口文档 / OpenAPI', '在线文档 · 11-01', false],
+  ]
+
+  const LOCALS = [
+    ['MCP 端点笔记', 'docs.qq.com/openapi/mcp · /tencent-docs/api/tools'],
+    ['令牌获取页', 'docs.qq.com/scenario/open-claw.html'],
+  ]
+
+  function row(title, sub, isFolder, chip) {
+    return `<div class="row">
+      <div class="ico ${isFolder ? 'f' : ''}">${isFolder ? '▸' : '▤'}</div>
+      <div class="meta"><div class="t">${title}</div><div class="s">${sub}</div></div>
+      ${chip ? `<span class="chip">${chip}</span>` : ''}
+    </div>`
+  }
+
+  let body = ''
+  if (tab === 'recent') {
+    body = `<div class="bar"><input value="" placeholder="搜索文档标题…"><b>20 条 / 页</b></div>`
+      + RECENT.map(([t, s, c]) => row(t, s, false, c)).join('')
+      + `<div class="bar" style="margin-top:12px"><b>加载更多</b></div>`
+  } else if (tab === 'cloud') {
+    body = `<div class="crumb">全部文件 / <b>创新云平台</b></div>`
+      + `<div class="bar"><input value="" placeholder="搜索文档标题…"><b>刷新</b></div>`
+      + FOLDERS.map(([t, s, f]) => row(t, s, f, '')).join('')
+  } else {
+    body = `<div class="card">
+        <h3>添加一条本机链接</h3>
+        <p>只写标题和 URL，点击即在新标签打开；清单镜像到 <code>~/.dsh/tencent-docs/docs.json</code>。</p>
+        <input style="width:100%;font-size:15px;padding:10px 12px;border:1px solid var(--line);border-radius:9px;margin-bottom:10px" value="MCP 端点笔记">
+        <span class="btn">保存</span>
+      </div>`
+      + LOCALS.map(([t, s]) => row(t, s, false, '')).join('')
+  }
+
+  document.getElementById('panel').innerHTML = `
+    <div class="head"><h2>腾讯文档</h2><span>${TABS.find(x => x[0] === tab)[2]}</span></div>
+    <div class="tabs">${TABS.map(([id, label]) => `<b class="${id === tab ? 'on' : ''}">${label}</b>`).join('')}</div>
+    <div class="body">${body}</div>
+    <div class="foot"><span>腾讯文档 · 由</span><b>liuxc</b><span>制作 · v0.3.4 · MIT</span></div>
+  `
+</script>
+</body>
+</html>

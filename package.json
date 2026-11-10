@@ -1,13 +1,25 @@
 {
   "name": "dsh-tencent-docs",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "type": "module",
-  "description": "Tencent Docs hub: a left-sidebar entry whose panel browses the real Tencent Docs tree over the official MCP endpoint, plus a local link list.",
+  "description": "Tencent Docs in the DSH sidebar: recent files, folder tree and search over the official Tencent Docs MCP endpoint, plus a local link list.",
   "license": "MIT",
   "author": "liuxc",
+  "homepage": "https://github.com/liuxc/dsh-tencent-docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liuxc/dsh-tencent-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/liuxc/dsh-tencent-docs/issues"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "engines": {
+    "node": ">=20",
+    "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
   },
   "keywords": [
     "dsh-plugin",
@@ -28,18 +40,15 @@
     "cordis.patch.yml",
     "icon.svg",
     "README.md",
-    "INSTALL.md"
+    "INSTALL.md",
+    "market"
   ],
   "dsh": {
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    },
+    "bundle": { "patch": "./cordis.patch.yml" },
     "client": {
       "platform": "web",
       "immediately": true,
-      "inject": [
-        "@deepseek-ai/dsh-client-locale"
-      ]
+      "inject": ["@deepseek-ai/dsh-client-locale"]
     }
   }
 }

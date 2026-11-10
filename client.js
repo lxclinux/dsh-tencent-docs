@@ -900,7 +900,7 @@ window.__ModuleLoader__.load({
           { style: S.foot },
           h('span', null, '腾讯文档 · 由'),
           h('span', { style: S.footName }, 'liuxc'),
-          h('span', null, '制作 · v0.3.3 · MIT'),
+          h('span', null, '制作 · v0.3.4 · MIT'),
         ),
       )
     }
