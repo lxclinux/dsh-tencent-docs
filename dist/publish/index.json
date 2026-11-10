@@ -1,0 +1,41 @@
+{
+  "format": 1,
+  "title": {
+    "en": "Tencent Docs",
+    "zh": "腾讯文档"
+  },
+  "description": {
+    "en": "A private index with one plugin: Tencent Docs in the DSH sidebar.",
+    "zh": "私有源，只收录一个插件：DSH 侧栏里的腾讯文档。"
+  },
+  "plugins": [
+    {
+      "name": "dsh-tencent-docs",
+      "title": {
+        "en": "Tencent Docs",
+        "zh": "腾讯文档"
+      },
+      "description": {
+        "en": "Left-sidebar entry that browses the real Tencent Docs account over the official MCP endpoint: recent files, folder tree, search, plus a local link list.",
+        "zh": "左侧栏入口：经官方 MCP 端点读取真实腾讯文档账号的最近文件、目录树与搜索，另带一个本机链接清单。"
+      },
+      "icon": "icon.svg",
+      "author": "liuxc",
+      "homepage": "https://github.com/lxclinux/dsh-tencent-docs",
+      "repository": { "url": "https://github.com/lxclinux/dsh-tencent-docs" },
+      "versions": [
+        {
+          "version": "0.3.5",
+          "publishTimestamp": 1794329351,
+          "source": {
+            "type": "npm",
+            "registry": "https://registry.npmjs.org"
+          },
+          "engines": {
+            "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
+          }
+        }
+      ]
+    }
+  ]
+}

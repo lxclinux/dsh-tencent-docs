@@ -1,0 +1,41 @@
+# 把 dist/publish 发布到 GitHub Pages，作为 DSH 插件索引源
+# 启用方式：仓库 Settings → Pages → Build and deployment → Source 选 GitHub Actions
+name: pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dist/publish/**'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare site
+        run: |
+          mkdir -p site
+          cp dist/publish/index.json site/index.json
+          cp dist/publish/icon.svg site/icon.svg
+          cp README.md site/README.md || true
+          ls -la site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4
