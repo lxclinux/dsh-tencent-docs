@@ -6,6 +6,8 @@ Click the sidebar icon and the panel lists your real documents — no folder syn
 
 ![sidebar entry](icon.svg)
 
+> 由 **YG** 制作 · MIT · v0.3.2
+
 ## What it does
 
 | Tab | Source | What you get |
@@ -26,7 +28,7 @@ Or from a local checkout / tarball:
 
 ```sh
 dsh plugin --profile <profile> add "C:\path\to\dsh-tencent-docs"
-dsh plugin --profile <profile> add "C:\path\to\dsh-tencent-docs-0.3.1.tgz"
+dsh plugin --profile <profile> add "C:\path\to\dsh-tencent-docs-0.3.2.tgz"
 ```
 
 Restart or reload the host, refresh the web GUI, and a document icon appears in the left rail.
@@ -60,6 +62,12 @@ Errors answer `{ ok: false, error, authRequired }`; a missing token is `401`.
 - `count` above 20 on the recent endpoint returns `count exceeds maximum value of 20`; the host clamps it.
 - Free Tencent Docs accounts: 2000 MCP calls/day.
 - No credentials, no telemetry, no network calls beyond `docs.qq.com`.
+
+## Author
+
+**YG** — idea, host bridge, client panel, packaging.
+
+If you fork or redistribute this plugin, keep the `author` field in `package.json` and the footer credit in the panel (「由 YG 制作」) intact — MIT requires the copyright notice anyway.
 
 ## License
 

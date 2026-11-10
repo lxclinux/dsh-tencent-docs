@@ -167,6 +167,17 @@ window.__ModuleLoader__.load({
         fontWeight: active ? 700 : 500,
       }),
       body: { flex: 1, minHeight: 0, overflowY: 'auto', padding: '0 28px 28px' },
+      foot: {
+        padding: '10px 28px 14px',
+        borderTop: `1px solid ${C.line}`,
+        fontSize: 12.5,
+        color: C.dim,
+        display: 'flex',
+        gap: 8,
+        alignItems: 'center',
+        flexWrap: 'wrap',
+      },
+      footName: { fontWeight: 600, color: C.fg },
       form: {
         display: 'grid',
         gridTemplateColumns: '1.1fr 1.6fr 1fr auto',
@@ -884,6 +895,13 @@ window.__ModuleLoader__.load({
         ),
         h('div', { style: S.body },
           tab === 'recent' ? h(RecentTab) : tab === 'cloud' ? h(CloudTab) : h(LocalTab)),
+        h(
+          'div',
+          { style: S.foot },
+          h('span', null, '腾讯文档 · 由'),
+          h('span', { style: S.footName }, 'YG'),
+          h('span', null, '制作 · v0.3.2 · MIT'),
+        ),
       )
     }
 
