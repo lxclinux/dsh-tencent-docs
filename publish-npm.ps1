@@ -37,10 +37,10 @@ if ($LASTEXITCODE -eq 0) {
 }
 
 Write-Host "3/4 发布..." -ForegroundColor Cyan
-$args = @('publish', '--access', 'public', "--registry=$reg", '--strict-ssl=false')
-if ($Otp) { $args += "--otp=$Otp" }
-if ($WebAuth) { $args += '--auth-type=web' }
-& npm @args
+$publishArgs = @('publish', '--access', 'public', "--registry=$reg", '--strict-ssl=false')
+if ($Otp) { $publishArgs += "--otp=$Otp" }
+if ($WebAuth) { $publishArgs += '--auth-type=web' }
+& npm @publishArgs
 $code = $LASTEXITCODE
 
 Write-Host "4/4 结果..." -ForegroundColor Cyan
