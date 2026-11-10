@@ -1,12 +1,12 @@
 {
   "format": 1,
   "title": {
-    "en": "Tencent Docs",
-    "zh": "腾讯文档"
+    "en": "Tencent Docs for DSH",
+    "zh": "腾讯文档 · DSH 插件"
   },
   "description": {
-    "en": "A private index with one plugin: Tencent Docs in the DSH sidebar.",
-    "zh": "私有源，只收录一个插件：DSH 侧栏里的腾讯文档。"
+    "en": "Private index hosting one plugin: Tencent Docs in the DSH sidebar.",
+    "zh": "私有索引源，只收录一个插件：DSH 侧栏里的腾讯文档。"
   },
   "plugins": [
     {
@@ -22,14 +22,17 @@
       "icon": "icon.svg",
       "author": "liuxc",
       "homepage": "https://github.com/lxclinux/dsh-tencent-docs",
-      "repository": { "url": "https://github.com/lxclinux/dsh-tencent-docs" },
+      "repository": {
+        "url": "https://github.com/lxclinux/dsh-tencent-docs"
+      },
       "versions": [
         {
           "version": "0.3.5",
-          "publishTimestamp": 1794329351,
+          "publishTimestamp": 1794327414,
           "source": {
-            "type": "npm",
-            "registry": "https://registry.npmjs.org"
+            "type": "git",
+            "url": "https://github.com/lxclinux/dsh-tencent-docs",
+            "commit": "bd94efe5d8d279c6ebdad3fdbf25c33377347775"
           },
           "engines": {
             "dsh": ">=0.2.0-rc.2 || >=0.2.1-rc.2 || >=0.2.2-rc.1"
