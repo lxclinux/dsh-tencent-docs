@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px;
+    background: #f6f7fa;
+    font: 14px/1.55 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    color: #1c1d21;
+  }
+  .card {
+    width: 460px; background: #fff; border: 1px solid #e8eaee; border-radius: 14px;
+    padding: 16px 18px 14px; box-shadow: 0 1px 2px rgba(20,24,40,.04);
+  }
+  .top { display: flex; align-items: flex-start; gap: 10px; }
+  .icon { width: 38px; height: 38px; border-radius: 10px; flex: none; }
+  .nm { font-size: 16px; font-weight: 700; letter-spacing: .1px; display: flex; align-items: center; gap: 6px; }
+  .nm span { font-size: 12px; color: #8a8f99; font-weight: 500; }
+  .own { display: flex; align-items: center; gap: 6px; color: #6b7280; font-size: 13px; margin-top: 2px; }
+  .av { width: 16px; height: 16px; border-radius: 50%; background: linear-gradient(135deg,#4a86ff,#1f4fd8); }
+  .ver { color: #8a8f99; font-size: 12.5px; display: flex; align-items: center; gap: 10px; margin-left: auto; white-space: nowrap; }
+  .desc { margin: 12px 0 14px; font-size: 13.5px; color: #4b5563; }
+  .pills { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .pill {
+    font-size: 12.5px; color: #4b5563; background: #f3f5f9; border-radius: 999px;
+    padding: 5px 11px; display: inline-flex; align-items: center; gap: 5px;
+  }
+  .pill.ok { color: #1f7a45; background: #eaf7ef; }
+  .pill.link { color: #2f6bff; background: #fff; border: 1px solid #e2e6ee; }
+  .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+  .shots img { width: 100%; height: 96px; object-fit: cover; object-position: left top; border-radius: 9px; border: 1px solid #eceff4; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="top">
+      <img class="icon" src="icon-256.png" alt="">
+      <div style="min-width:0">
+        <div class="nm">dsh-tencent-docs <span>· 0.3.4</span></div>
+        <div class="own"><i class="av"></i> liuxc <span style="color:#c3c7cf">↓ 1.2k</span></div>
+      </div>
+      <div class="ver">⭐ 12</div>
+    </div>
+    <div class="desc">
+      把腾讯文档放进 DSH 左侧栏：点一下就能看真实的最近文件、逐层下钻的目录树（含面包屑与标题搜索）和一个本机链接清单，数据经腾讯文档官方 MCP 端点实时读取。令牌粘贴一次、只由 Host 半落盘（0600）；腾讯文档禁止第三方嵌入，文件在新标签打开。
+    </div>
+    <div class="pills">
+      <span class="pill ok">✓ DSH ≥0.2.0</span>
+      <span class="pill">文档与渲染</span>
+      <span class="pill link">安装</span>
+      <span class="pill link" style="margin-left:auto">评论</span>
+    </div>
+    <div class="shots">
+      <img src="shot-recent.png" alt="">
+      <img src="shot-cloud.png" alt="">
+      <img src="shot-local.png" alt="">
+    </div>
+  </div>
+</body>
+</html>

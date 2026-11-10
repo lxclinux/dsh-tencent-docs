@@ -1,5 +1,7 @@
 # dsh-tencent-docs
 
+[![Awesome DSH Plugin](https://awesome-dsh-plugin.com/badge.svg)](https://awesome-dsh-plugin.com)
+
 **腾讯文档 in the DSH left sidebar.** Click the icon, get your real recent files, folder tree and title search — read live from Tencent Docs' official MCP endpoint with a token you paste once.
 
 > 由 **liuxc** 制作 · MIT · v0.3.4
