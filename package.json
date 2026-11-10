@@ -1,17 +1,17 @@
 {
   "name": "dsh-tencent-docs",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "type": "module",
   "description": "Tencent Docs in the DSH sidebar: recent files, folder tree and search over the official Tencent Docs MCP endpoint, plus a local link list.",
   "license": "MIT",
   "author": "liuxc",
-  "homepage": "https://github.com/liuxc/dsh-tencent-docs",
+  "homepage": "https://github.com/lxclinux/dsh-tencent-docs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liuxc/dsh-tencent-docs.git"
+    "url": "git+https://github.com/lxclinux/dsh-tencent-docs.git"
   },
   "bugs": {
-    "url": "https://github.com/liuxc/dsh-tencent-docs/issues"
+    "url": "https://github.com/lxclinux/dsh-tencent-docs/issues"
   },
   "publishConfig": {
     "access": "public",

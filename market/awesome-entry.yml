@@ -1,8 +1,8 @@
-# 放到 awesome-dsh-plugin 仓库的 data/plugins/liuxc__dsh-tencent-docs.yml
+# 放到 awesome-dsh-plugin 仓库的 data/plugins/lxclinux__dsh-tencent-docs.yml
 # PR 目标：https://github.com/awesome-dsh-plugin/awesome-dsh-plugin
 # README 由 CI 生成，不要手改 README。
-url: https://github.com/liuxc/dsh-tencent-docs
-name: liuxc/dsh-tencent-docs
+url: https://github.com/lxclinux/dsh-tencent-docs
+name: lxclinux/dsh-tencent-docs
 category: docs
 description:
   en: Tencent Docs in the DSH left sidebar, with recent files, a drill-down folder tree, title search and a local link list read over the official MCP endpoint.
