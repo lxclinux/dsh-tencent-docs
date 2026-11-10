@@ -1,9 +1,11 @@
 ﻿# 发布到 npm。账号开了 2FA，必须二选一：
 #   A) 用带 Bypass 2FA 的 Granular Access Token：.\publish-npm.ps1 -Token ghp_xxx
 #   B) 用认证器里的 6 位码：.\publish-npm.ps1 -Otp 123456
+#   C) 账号 2FA 是安全密钥（Windows Hello）：.\publish-npm.ps1 -WebAuth
 param(
   [string]$Token,
-  [string]$Otp
+  [string]$Otp,
+  [switch]$WebAuth
 )
 $ErrorActionPreference = 'Continue'
 $ProgressPreference = 'SilentlyContinue'
@@ -37,6 +39,7 @@ if ($LASTEXITCODE -eq 0) {
 Write-Host "3/4 发布..." -ForegroundColor Cyan
 $args = @('publish', '--access', 'public', "--registry=$reg", '--strict-ssl=false')
 if ($Otp) { $args += "--otp=$Otp" }
+if ($WebAuth) { $args += '--auth-type=web' }
 & npm @args
 $code = $LASTEXITCODE
 
