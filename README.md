@@ -6,7 +6,7 @@ Click the sidebar icon and the panel lists your real documents — no folder syn
 
 ![sidebar entry](icon.svg)
 
-> 由 **YG** 制作 · MIT · v0.3.2
+> 由 **liuxc** 制作 · MIT · v0.3.3
 
 ## What it does
 
@@ -28,7 +28,7 @@ Or from a local checkout / tarball:
 
 ```sh
 dsh plugin --profile <profile> add "C:\path\to\dsh-tencent-docs"
-dsh plugin --profile <profile> add "C:\path\to\dsh-tencent-docs-0.3.2.tgz"
+dsh plugin --profile <profile> add "C:\path\to\dsh-tencent-docs-0.3.3.tgz"
 ```
 
 Restart or reload the host, refresh the web GUI, and a document icon appears in the left rail.
@@ -65,10 +65,10 @@ Errors answer `{ ok: false, error, authRequired }`; a missing token is `401`.
 
 ## Author
 
-**YG** — idea, host bridge, client panel, packaging.
+**liuxc** — idea, host bridge, client panel, packaging.
 
-If you fork or redistribute this plugin, keep the `author` field in `package.json` and the footer credit in the panel (「由 YG 制作」) intact — MIT requires the copyright notice anyway.
+If you fork or redistribute this plugin, keep the `author` field in `package.json` and the footer credit in the panel (「由 liuxc 制作」) intact — MIT requires the copyright notice anyway.
 
 ## License
 
-MIT © 2026 YG
+MIT © 2026 liuxc

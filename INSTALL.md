@@ -1,11 +1,11 @@
-# 安装说明（dsh-tencent-docs 0.3.2）
+# 安装说明（dsh-tencent-docs 0.3.3）
 
 一个 DSH 插件：左侧栏加一个「腾讯文档」入口，面板里可以直接看**最近打开的文件**、
 按**目录树浏览云文档**、按标题**搜索**，另外还有一个**本机清单**放手工粘贴的链接。
 
 ## 一、装插件
 
-1. 解压 `dsh-tencent-docs-0.3.2.zip`，得到一个目录 `dsh-tencent-docs`（里面有 `package.json`、`index.js`、`client.js`、`cordis.patch.yml`、`icon.svg`）。
+1. 解压 `dsh-tencent-docs-0.3.3.zip`，得到一个目录 `dsh-tencent-docs`（里面有 `package.json`、`index.js`、`client.js`、`cordis.patch.yml`、`icon.svg`）。
 2. 把目录放到一个**不会被随手删掉**的位置，例如 `C:\dsh-plugins\dsh-tencent-docs`。
    - 注意：DSH 装的是目录本身（本机做的是 Junction 链接），装完后**不要删这个目录**，删了插件就没了。
 3. 让 DSH 安装它，任选一种：

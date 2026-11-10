@@ -1,10 +1,10 @@
 {
   "name": "dsh-tencent-docs",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "type": "module",
   "description": "Tencent Docs hub: a left-sidebar entry whose panel browses the real Tencent Docs tree over the official MCP endpoint, plus a local link list.",
   "license": "MIT",
-  "author": "YG",
+  "author": "liuxc",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

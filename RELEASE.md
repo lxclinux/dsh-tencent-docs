@@ -3,7 +3,7 @@
 ## 已完成
 
 - `C:\deepseek-harness\主对话\release\dsh-tencent-docs\`：独立 git 仓库（分支 `main`，root commit `b14f70c`），9 个文件，`npm publish --dry-run` 通过（17.6 KB，8 个文件入包，包名 `dsh-tencent-docs` 在 npm 上未被占用）。
-- `C:\deepseek-harness\主对话\dist\publish\`：`dsh-tencent-docs-0.3.2.tgz`（17.6 KB，SHA256 `7D5779277AD4801E05735B6F8D875E4A728C6432354ABDA1D520503F6B260641`）+ 格式 1 的 `index.json`（`validate-index.mjs` 通过）。
+- `C:\deepseek-harness\主对话\dist\publish\`：`dsh-tencent-docs-0.3.3.tgz`（17.6 KB，SHA256 `400A41542A31C15190FEDF3C94FAEFFC569AD657D8ED8DC2C58955706916B833`）+ 格式 1 的 `index.json`（`validate-index.mjs` 通过）。
 
 ## 第一步：发到 npm（需要一个 npm 账号）
 
@@ -48,7 +48,7 @@ git push -u origin main
 
 ## 第四步（可选）：自建索引源给团队用
 
-`dist\publish\` 整个目录丢到任意静态服务器（内网 nginx / OSS / GitHub Pages），然后在 DSH 里：设置 → 插件 → 发现 → 索引源 → 添加该 `index.json` 的 URL。团队的安装走 `dsh plugin --profile <profile> add dsh-tencent-docs@0.3.2`，源指向 `registry.npmjs.org`。
+`dist\publish\` 整个目录丢到任意静态服务器（内网 nginx / OSS / GitHub Pages），然后在 DSH 里：设置 → 插件 → 发现 → 索引源 → 添加该 `index.json` 的 URL。团队的安装走 `dsh plugin --profile <profile> add dsh-tencent-docs@0.3.3`，源指向 `registry.npmjs.org`。
 
 ## 版本升级流程
 

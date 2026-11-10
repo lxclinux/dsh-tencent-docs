@@ -899,8 +899,8 @@ window.__ModuleLoader__.load({
           'div',
           { style: S.foot },
           h('span', null, '腾讯文档 · 由'),
-          h('span', { style: S.footName }, 'YG'),
-          h('span', null, '制作 · v0.3.2 · MIT'),
+          h('span', { style: S.footName }, 'liuxc'),
+          h('span', null, '制作 · v0.3.3 · MIT'),
         ),
       )
     }
