@@ -1,0 +1,36 @@
+{
+  "name": "dsh-tencent-docs",
+  "version": "0.3.1",
+  "type": "module",
+  "description": "Tencent Docs hub: a left-sidebar entry whose panel browses the real Tencent Docs tree over the official MCP endpoint, plus a local link list.",
+  "license": "MIT",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "tencent-docs",
+    "docs",
+    "mcp",
+    "sidebar"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "INSTALL.md"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-locale"]
+    }
+  }
+}
